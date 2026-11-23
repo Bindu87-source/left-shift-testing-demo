@@ -1,7 +1,7 @@
 
 import unittest
 
-from src.calculator_price import calculate_price
+from src.testdiscount import calculate_price
 
 
 class PriceCalculatorTests(unittest.TestCase):
