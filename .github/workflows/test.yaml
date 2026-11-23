@@ -3,7 +3,7 @@ name: test
 
 on:
   push:
-    branches: [main]
+    branches: [left-shift-testing-demo]
   pull_request:
     branches: [main]
 
