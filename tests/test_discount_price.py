@@ -24,6 +24,5 @@ class PriceCalculatorTests(unittest.TestCase):
             calculate_price(-50, "VIP")
 
    
-
 if __name__ == "__main__":
     unittest.main()
