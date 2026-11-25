@@ -32,4 +32,28 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -v
 
+      - name: Run unit tests with coverage and JUnit report
+        run: |
+          mkdir -p test-reports
+          coverage run -m xmlrunner discover -v -o test-reports
+
+      - name: Generate coverage reports
+        if: always()
+        run: |
+          if [ -f .coverage ]; then
+            coverage report -m
+            coverage xml -o coverage.xml
+            coverage html -d htmlcov
+          fi
+
+      - name: Upload test and coverage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-and-coverage-reports
+          path: |
+            test-reports/
+            coverage.xml
+            htmlcov/
+          if-no-files-found: warn
   
