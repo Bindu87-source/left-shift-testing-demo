@@ -41,7 +41,7 @@ jobs:
         if: always()
         run: |
           if [ -f .coverage ]; then
-            coverage report -m
+            python -m coverage
             coverage xml -o coverage.xml
             coverage html -d htmlcov
           fi
