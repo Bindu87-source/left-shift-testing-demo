@@ -35,7 +35,7 @@ jobs:
       - name: Run unit tests with coverage and JUnit report
         run: |
           mkdir -p test-reports
-          coverage run -m xmlrunner discover -v -o test-reports
+          python -m coverage run -m xmlrunner discover -v -o test-reports
 
       - name: Generate coverage reports
         if: always()
